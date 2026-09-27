@@ -162,11 +162,11 @@ def show(*,
               yrange = (imagersize[1]-1, 0),
               title  = f'el_moon={el_moon_deg:.1f} az_sun={az_sun_deg:.1f}')
 
-    return tuple((*plot_tuples, plot_kwargs))
+    return (*plot_tuples, plot_kwargs)
 
 
-
-N = 3*3
+layout = (3,3)
+N = layout[0]*layout[1]
 
 el_moon_deg = 60.
 az_sun_deg_all = np.linspace(0, 180, N)
@@ -175,7 +175,7 @@ plot_tuples_kwargs = \
            az_sun_deg  = az) \
       for az in az_sun_deg_all ]
 gp.plot(*plot_tuples_kwargs,
-        multiplot = 'title "Scanning sun azimuth at sunset at mid-moon-elevation" layout 3,3',
+        multiplot = f'title "Scanning sun azimuth at sunset at mid-moon-elevation" layout {layout[0]},{layout[1]}',
         hardcopy  = '/tmp/scan-sun-az.pdf',
         terminal  = 'pdfcairo noenhanced size 8in,8in')
 
@@ -186,7 +186,7 @@ plot_tuples_kwargs = \
            az_sun_deg  = az_sun_deg) \
       for el in el_moon_deg_all ]
 gp.plot(*plot_tuples_kwargs,
-        multiplot = 'title "Scanning moon elevation at sunset at 3/4 moon" layout 3,3',
+        multiplot = f'title "Scanning moon elevation at sunset at 3/4 moon" layout {layout[0]},{layout[1]}',
         hardcopy  = '/tmp/scan-moon-el.pdf',
         terminal  = 'pdfcairo noenhanced size 8in,8in')
 

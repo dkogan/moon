@@ -47,3 +47,11 @@ illumination is all on the opposite side, but we can see a slice of the
 illuminated back side. As the sun swings around, we see more and more of the
 moon. At azimuth = 90deg, we have a half-lit moon. Past that, more and more of
 the moon is visible, always pointing up.
+
+This was also a super interesting study of the current state of AI tools. As I
+was writing this and debugging, I would talk to Claude and Gemini about how this
+worked and what I should be seeing. They were both completely unable to
+comprehend this, and would make infinite circular arguments. Clearly they read
+some incomplete explanations on the internet (as I have), and lack the reasoning
+capability necessary to distill it into something resembling "understanding".
+AGI is not here yet.
